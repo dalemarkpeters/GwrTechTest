@@ -8,9 +8,9 @@ namespace ShapeProcessorTests
         [Test]
         public void CanCalculatePerimeterOfAShapeGivenItsSideLengthAndNumberOfSides()
         {
-            var diameterCalculator = new PerimeterCalculator();
+            var perimeterCalculator = new PerimeterCalculator();
 
-            var result = diameterCalculator.CalculateDiameter(numberOfSides: 6, sideLength: 2);
+            var result = perimeterCalculator.CalculatePerimeter(numberOfSides: 6, sideLength: 2);
 
             Assert.AreEqual(12, result);
         }
@@ -18,9 +18,9 @@ namespace ShapeProcessorTests
         [Test]
         public void CanCalculatePerimeterOfShapeGiven8SidesOfLength8cm()
         {
-            var diameterCalculator = new PerimeterCalculator();
+            var perimeterCalculator = new PerimeterCalculator();
 
-            var result = diameterCalculator.CalculateDiameter(numberOfSides: 8, sideLength: 8);
+            var result = perimeterCalculator.CalculatePerimeter(numberOfSides: 8, sideLength: 8);
 
             Assert.AreEqual(64, result);
         }
