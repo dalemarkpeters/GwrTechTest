@@ -8,7 +8,7 @@ namespace ShapeProcessorTests
         [Test]
         public void CanCalculatePerimeterOfAShapeGivenItsSideLengthAndNumberOfSides()
         {
-            var diameterCalculator = new DiameterCalculator();
+            var diameterCalculator = new PerimeterCalculator();
 
             var result = diameterCalculator.CalculateDiameter(numberOfSides: 6, sideLength: 2);
 
