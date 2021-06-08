@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using ShapeProcessor.Domain;
 
 namespace ShapeProcessorTests
 {
@@ -10,9 +11,9 @@ namespace ShapeProcessorTests
         [TestCase(1, 4, 4)]
         public void CanCalculatePerimeterOfAShapeGivenItsSideLengthAndNumberOfSides(int numSides, int sideLength, int expectedResult)
         {
-            var perimeterCalculator = new PerimeterCalculator();
+            var shape = new Shape(numSides, sideLength);
 
-            var result = perimeterCalculator.CalculatePerimeter(numSides, sideLength);
+            var result = shape.CalculatePerimeter();
 
             Assert.AreEqual(expectedResult, result);
         }
