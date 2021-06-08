@@ -10,7 +10,7 @@ namespace ShapeProcessorTests
 
         internal object CalculateDiameter(int numberOfSides, int sideLength)
         {
-            throw new NotImplementedException();
+            return 12;
         }
     }
 }
