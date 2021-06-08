@@ -6,7 +6,7 @@ namespace ShapeProcessorTests
     {
         internal int CalculateDiameter(int numberOfSides, int sideLength)
         {
-            return 12;
+            return numberOfSides * sideLength;
         }
     }
 }
