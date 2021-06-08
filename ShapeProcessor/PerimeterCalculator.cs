@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace ShapeProcessorTests
+﻿namespace ShapeProcessorTests
 {
-    internal class PerimeterCalculator
+    public class PerimeterCalculator
     {
-        internal int CalculatePerimeter(int numberOfSides, int sideLength)
+        public int CalculatePerimeter(int numberOfSides, int sideLength)
         {
             return numberOfSides * sideLength;
         }
