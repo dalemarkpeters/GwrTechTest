@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ShapeProcessor.Domain;
+using System;
+using System.Collections.Generic;
 
 namespace ShapeProcessor.Tests
 {
@@ -10,7 +12,10 @@ namespace ShapeProcessor.Tests
 
         internal object Read()
         {
-            throw new NotImplementedException();
+            return new List<Shape>
+            {
+                new Shape(4, 4)
+            };
         }
     }
 }
