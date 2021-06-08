@@ -4,7 +4,7 @@ using ShapeProcessor.Domain;
 namespace ShapeProcessorTests
 {
     [TestFixture]
-    public class UnitTest1
+    public class ShapeTests
     {
         [TestCase(6, 2, 12)]
         [TestCase(8, 8, 64)]
