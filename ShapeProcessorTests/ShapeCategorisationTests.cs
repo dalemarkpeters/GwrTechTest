@@ -44,7 +44,7 @@ namespace ShapeProcessor.Tests
         {
             var shape = new Shape(numSides, sideLengthCm);
 
-            Assert.AreEqual(PerimeterCategory.Between20cmAnd49cm, shape.PerimeterCategory);
+            Assert.AreEqual(PerimeterCategory.Between50cmAnd99cm, shape.PerimeterCategory);
         }
     }
 }
