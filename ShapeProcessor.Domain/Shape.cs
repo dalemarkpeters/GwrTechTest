@@ -13,7 +13,7 @@ namespace ShapeProcessor.Domain
         {
             switch (CalculatePerimeter())
             {
-                case int p when p >= 10 && p < 19:
+                case int p when p >= 10 && p <= 19:
                     return PerimeterCategory.Between10cmAnd19cm;
                 default:
                     return PerimeterCategory.Under10cm;
