@@ -17,6 +17,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ShapeProcessor.Domain\ShapeProcessor.Domain.csproj" />
     <ProjectReference Include="..\ShapeProcessor\ShapeProcessor.csproj" />
+    <ProjectReference Include="..\ShapesProcessor.Input\ShapesProcessor.Input.csproj" />
   </ItemGroup>
 
 </Project>

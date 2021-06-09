@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShapeProcessor.Domain", "Sh
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShapeProcessor.Tests", "ShapeProcessorTests\ShapeProcessor.Tests.csproj", "{9AC28F2B-3238-4DDE-A695-2D1C9BB5214B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesProcessor.Input", "ShapesProcessor.Input\ShapesProcessor.Input.csproj", "{18AA0377-4700-4D95-9AF1-F3764F7BB9FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9AC28F2B-3238-4DDE-A695-2D1C9BB5214B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AC28F2B-3238-4DDE-A695-2D1C9BB5214B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AC28F2B-3238-4DDE-A695-2D1C9BB5214B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18AA0377-4700-4D95-9AF1-F3764F7BB9FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18AA0377-4700-4D95-9AF1-F3764F7BB9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18AA0377-4700-4D95-9AF1-F3764F7BB9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18AA0377-4700-4D95-9AF1-F3764F7BB9FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

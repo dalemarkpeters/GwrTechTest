@@ -1,9 +1,8 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 using ShapeProcessor.Domain;
-using System;
+using ShapesProcessor.Input;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ShapeProcessor.Tests
 {
@@ -11,11 +10,24 @@ namespace ShapeProcessor.Tests
     public class FileInputTests
     {
         [Test]
-        public void CanReadTextFile()
+        public void CanReturnNewListOfShapes()
         {
-            var fileReader = new FileReader();
+            var fileReader = new ShapesReader();
 
-            var result = fileReader.Read();
+            var result = fileReader.Read("shapes.csv", true);
+
+            result.Should().BeEquivalentTo(new List<Shape>
+            {
+                new Shape(4, 4)
+            });
+        }
+
+        [Test]
+        public void CanReadTextFileGivenName()
+        {
+            var fileReader = new ShapesReader();
+
+            var result = fileReader.Read("shapes.csv", true);
 
             result.Should().BeEquivalentTo(new List<Shape>
             {
