@@ -5,6 +5,7 @@
         public int NumberOfSides { get; set; }
 
         public int SideLengthInCentimetres { get; set; }
+        public PerimeterCategory PerimeterCategory { get; }
 
         public Shape(int numberOfSides, int sideLengthInCentimetres)
         {
