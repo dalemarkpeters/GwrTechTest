@@ -15,7 +15,6 @@
                 int p when p >= 20 && p <= 49 => PerimeterCategory.Between20cmAnd49cm,
                 _ => PerimeterCategory.Under10cm,
             };
-            ;
         }
 
         public Shape(int numberOfSides, int sideLengthInCentimetres)
