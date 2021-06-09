@@ -13,7 +13,7 @@ namespace ShapeProcessorTests
         {
             var shape = new Shape(numSides, sideLength);
 
-            var result = shape.CalculatePerimeter();
+            var result = shape.PerimeterInCentimetres;
 
             Assert.AreEqual(expectedResult, result);
         }
