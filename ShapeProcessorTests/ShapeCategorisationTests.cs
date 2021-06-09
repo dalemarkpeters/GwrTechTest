@@ -36,5 +36,15 @@ namespace ShapeProcessor.Tests
 
             Assert.AreEqual(PerimeterCategory.Between20cmAnd49cm, shape.PerimeterCategory);
         }
+
+        [TestCase(50, 1)]
+        [TestCase(99, 1)]
+        [TestCase(75, 1)]
+        public void ShapeWithPerimeterOfBetween50cmAnd99cmIsCategorisedAsSuch(int numSides, int sideLengthCm)
+        {
+            var shape = new Shape(numSides, sideLengthCm);
+
+            Assert.AreEqual(PerimeterCategory.Between20cmAnd49cm, shape.PerimeterCategory);
+        }
     }
 }
