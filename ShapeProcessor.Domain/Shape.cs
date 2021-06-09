@@ -5,11 +5,14 @@
         public int NumberOfSides { get; set; }
 
         public int SideLengthInCentimetres { get; set; }
+
+        public int PerimeterInCentimetres { get { return NumberOfSides * SideLengthInCentimetres; } }
+
         public PerimeterCategory PerimeterCategory { get { return GetPerimeterCategory(); } }
 
         private PerimeterCategory GetPerimeterCategory()
         {
-            return CalculatePerimeter() switch
+            return PerimeterInCentimetres switch
             {
                 int p when p >= 10 && p <= 19 => PerimeterCategory.Between10cmAnd19cm,
                 int p when p >= 20 && p <= 49 => PerimeterCategory.Between20cmAnd49cm,
@@ -23,11 +26,6 @@
         {
             NumberOfSides = numberOfSides;
             SideLengthInCentimetres = sideLengthInCentimetres;
-        }
-
-        public int CalculatePerimeter()
-        {
-            return NumberOfSides * SideLengthInCentimetres;
         }
     }
 }
