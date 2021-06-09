@@ -10,27 +10,29 @@ namespace ShapeProcessor.Tests
     public class ShapeCategorisationTests
     {
         [Test]
-        public void ShapeWithPerimeterOf9cmIsCategorisedAsSuchUnder10cm()
+        public void ShapeWithPerimeterOf9cmIsCategorisedAsUnder10cm()
         {
             var shape = new Shape(9, 1);
 
             Assert.AreEqual(PerimeterCategory.Under10cm, shape.PerimeterCategory);
         }
 
-        [Test]
-        public void ShapeWithPerimeterOf10cmIsCategorisedAsBetween10cmAnd19cm()
+        [TestCase(10,1)]
+        [TestCase(19,1)]
+        [TestCase(15,1)]
+        public void ShapeWithPerimeterOfBetween10cmAnd19cmIsCategorisedAsSuch(int numSides, int sideLengthCm)
         {
-            var shape = new Shape(10, 1);
+            var shape = new Shape(numSides, sideLengthCm);
 
             Assert.AreEqual(PerimeterCategory.Between10cmAnd19cm, shape.PerimeterCategory);
         }
 
-        [Test]
-        public void ShapeWithPerimeterOf19cmIsCategorisedAsBetween10cmAnd19cm()
+        [TestCase(20, 1)]
+        public void ShapeWithPerimeterOfBetween20cmAnd49cmIsCategorisedAsSuch(int numSides, int sideLengthCm)
         {
-            var shape = new Shape(19, 1);
+            var shape = new Shape(numSides, sideLengthCm);
 
-            Assert.AreEqual(PerimeterCategory.Between10cmAnd19cm, shape.PerimeterCategory);
+            Assert.AreEqual(PerimeterCategory.Between20cmAnd49cm, shape.PerimeterCategory);
         }
     }
 }
