@@ -28,6 +28,8 @@ namespace ShapeProcessor.Tests
         }
 
         [TestCase(20, 1)]
+        [TestCase(49, 1)]
+        [TestCase(35, 1)]
         public void ShapeWithPerimeterOfBetween20cmAnd49cmIsCategorisedAsSuch(int numSides, int sideLengthCm)
         {
             var shape = new Shape(numSides, sideLengthCm);

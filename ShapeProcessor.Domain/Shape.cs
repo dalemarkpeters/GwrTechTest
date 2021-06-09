@@ -15,6 +15,8 @@ namespace ShapeProcessor.Domain
             {
                 case int p when p >= 10 && p <= 19:
                     return PerimeterCategory.Between10cmAnd19cm;
+                case int p when p >= 20 && p <= 49:
+                    return PerimeterCategory.Between20cmAnd49cm;
                 default:
                     return PerimeterCategory.Under10cm;
             };
