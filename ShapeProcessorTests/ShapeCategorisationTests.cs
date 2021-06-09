@@ -1,8 +1,5 @@
 ﻿using NUnit.Framework;
 using ShapeProcessor.Domain;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ShapeProcessor.Tests
 {
@@ -17,9 +14,9 @@ namespace ShapeProcessor.Tests
             Assert.AreEqual(PerimeterCategory.Under10cm, shape.PerimeterCategory);
         }
 
-        [TestCase(10,1)]
-        [TestCase(19,1)]
-        [TestCase(15,1)]
+        [TestCase(10, 1)]
+        [TestCase(19, 1)]
+        [TestCase(15, 1)]
         public void ShapeWithPerimeterOfBetween10cmAnd19cmIsCategorisedAsSuch(int numSides, int sideLengthCm)
         {
             var shape = new Shape(numSides, sideLengthCm);
