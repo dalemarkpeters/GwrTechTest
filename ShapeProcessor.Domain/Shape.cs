@@ -1,25 +1,21 @@
-﻿using System;
-
-namespace ShapeProcessor.Domain
+﻿namespace ShapeProcessor.Domain
 {
     public class Shape
     {
         public int NumberOfSides { get; set; }
 
         public int SideLengthInCentimetres { get; set; }
-        public PerimeterCategory PerimeterCategory { get { return GetPerimeterCategory(); }}
+        public PerimeterCategory PerimeterCategory { get { return GetPerimeterCategory(); } }
 
         private PerimeterCategory GetPerimeterCategory()
         {
-            switch (CalculatePerimeter())
+            return CalculatePerimeter() switch
             {
-                case int p when p >= 10 && p <= 19:
-                    return PerimeterCategory.Between10cmAnd19cm;
-                case int p when p >= 20 && p <= 49:
-                    return PerimeterCategory.Between20cmAnd49cm;
-                default:
-                    return PerimeterCategory.Under10cm;
+                int p when p >= 10 && p <= 19 => PerimeterCategory.Between10cmAnd19cm,
+                int p when p >= 20 && p <= 49 => PerimeterCategory.Between20cmAnd49cm,
+                _ => PerimeterCategory.Under10cm,
             };
+            ;
         }
 
         public Shape(int numberOfSides, int sideLengthInCentimetres)
