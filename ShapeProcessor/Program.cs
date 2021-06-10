@@ -37,11 +37,13 @@ namespace ShapeProcessor
             connection.Open();
             foreach (var shape in shapes)
             {
-                using var cmd = new SqlCommand("INSERT INTO dbo.Shapes(Id, NumberOfSides, SideLengthInCentimetres, PerimeterCategoryId) VALUES(@id, @numSides, @sideLengthInCentimetres, @perimeterCategoryId)", connection);
+                using var cmd = new SqlCommand(
+                    @"INSERT INTO dbo.Shapes(OriginalId, NumberOfSides, SideLengthInCentimetres, PerimeterCategoryId) 
+                    VALUES(@originalId, @numSides, @sideLengthInCentimetres, @perimeterCategoryId)", connection);
                 cmd.Parameters.Add("@numSides", SqlDbType.Int).Value = shape.NumberOfSides;
                 cmd.Parameters.Add("@sideLengthInCentimetres", SqlDbType.Int).Value = shape.SideLengthInCentimetres;
                 cmd.Parameters.Add("@perimeterCategoryId", SqlDbType.Int).Value = shape.PerimeterCategory;
-                cmd.Parameters.Add("@id", SqlDbType.Int).Value = shape.Id;
+                cmd.Parameters.Add("@originalId", SqlDbType.Int).Value = shape.OriginalId;
 
                 cmd.CommandType = CommandType.Text;
                 cmd.ExecuteNonQuery();

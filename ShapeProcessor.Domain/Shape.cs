@@ -2,7 +2,7 @@
 {
     public class Shape
     {
-        public int Id { get; set; }
+        public int OriginalId { get; set; }
 
         public int NumberOfSides { get; set; }
 
@@ -24,9 +24,9 @@
             };
         }
 
-        public Shape(int id, int numberOfSides, int sideLengthInCentimetres)
+        public Shape(int originalId, int numberOfSides, int sideLengthInCentimetres)
         {
-            Id = id;
+            OriginalId = originalId;
             NumberOfSides = numberOfSides;
             SideLengthInCentimetres = sideLengthInCentimetres;
         }
