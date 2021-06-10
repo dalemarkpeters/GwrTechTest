@@ -6,17 +6,17 @@ using System.Linq;
 
 namespace ShapesProcessor.Input
 {
-    public class ShapesReader
+    public class ShapesFileReader
     {
         private const int SampleSize = 65;
         private readonly Random _randomNumberGenerator;
 
-        public ShapesReader()
+        public ShapesFileReader()
         {
             _randomNumberGenerator = new Random();
         }
 
-        public ICollection<Shape> Read(string filePath, bool fileHasHeader)
+        public ICollection<Shape> ReadShapes(string filePath, bool fileHasHeader)
         {
             // Does the file exist?
 

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesProcessor.Input", "Sh
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DFEE2D1D-A990-41E5-B06A-3B2FF0554ACC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeProcessor.Output", "ShapeProcessor.Output\ShapeProcessor.Output.csproj", "{99DD8015-53FE-4DBA-B9E4-50002D4CB8EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{18AA0377-4700-4D95-9AF1-F3764F7BB9FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18AA0377-4700-4D95-9AF1-F3764F7BB9FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18AA0377-4700-4D95-9AF1-F3764F7BB9FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99DD8015-53FE-4DBA-B9E4-50002D4CB8EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99DD8015-53FE-4DBA-B9E4-50002D4CB8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99DD8015-53FE-4DBA-B9E4-50002D4CB8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99DD8015-53FE-4DBA-B9E4-50002D4CB8EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

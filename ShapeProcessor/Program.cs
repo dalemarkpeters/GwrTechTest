@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
+using ShapeProcessor.Output;
 using ShapesProcessor.Input;
 using System;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace ShapeProcessor
 {
@@ -10,10 +9,9 @@ namespace ShapeProcessor
     {
         static void Main(string[] args)
         {
-            IConfiguration Configuration = GetConfiguration();
             string filePath;
-
             bool headerIsIncluded;
+
             if (args.Length == 0)
             {
                 Console.WriteLine("Welcome to the Shape Processor command line interface!");
@@ -22,32 +20,19 @@ namespace ShapeProcessor
 
                 Console.WriteLine("Does the CSV file have a header? (Y/N)");
                 var headerIncludedString = Console.ReadLine();
-                headerIsIncluded = IsHealderIncluded(headerIncludedString);
+                headerIsIncluded = IsHeaderIncluded(headerIncludedString);
             }
             else
             {
                 filePath = args[0];
-                headerIsIncluded = IsHealderIncluded(args[1]);
+                headerIsIncluded = IsHeaderIncluded(args[1]);
             }
 
-            var shapesReader = new ShapesReader();
-            var shapes = shapesReader.Read(filePath, headerIsIncluded);
+            var shapesReader = new ShapesFileReader();
+            var shapes = shapesReader.ReadShapes(filePath, headerIsIncluded);
 
-            using var connection = new SqlConnection(Configuration.GetConnectionString("Default"));
-            connection.Open();
-            foreach (var shape in shapes)
-            {
-                using var cmd = new SqlCommand(
-                    @"INSERT INTO dbo.Shapes(OriginalId, NumberOfSides, SideLengthInCentimetres, PerimeterCategoryId) 
-                    VALUES(@originalId, @numSides, @sideLengthInCentimetres, @perimeterCategoryId)", connection);
-                cmd.Parameters.Add("@numSides", SqlDbType.Int).Value = shape.NumberOfSides;
-                cmd.Parameters.Add("@sideLengthInCentimetres", SqlDbType.Int).Value = shape.SideLengthInCentimetres;
-                cmd.Parameters.Add("@perimeterCategoryId", SqlDbType.Int).Value = shape.PerimeterCategory;
-                cmd.Parameters.Add("@originalId", SqlDbType.Int).Value = shape.OriginalId;
-
-                cmd.CommandType = CommandType.Text;
-                cmd.ExecuteNonQuery();
-            }
+            var shapesWriter = new ShapesDatabaseWriter(GetConfiguration());
+            shapesWriter.WriteShapes(shapes);
         }
 
         private static IConfiguration GetConfiguration()
@@ -57,7 +42,7 @@ namespace ShapeProcessor
                 .Build();
         }
 
-        private static bool IsHealderIncluded(string headerIncludedString)
+        private static bool IsHeaderIncluded(string headerIncludedString)
         {
             if (headerIncludedString.ToLowerInvariant() == "y".ToLowerInvariant())
             {
