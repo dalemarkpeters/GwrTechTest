@@ -9,12 +9,14 @@
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.16" />
     <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="3.1.16" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.16" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.16" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ShapeProcessor.Output\ShapeProcessor.Output.csproj" />
     <ProjectReference Include="..\ShapesProcessor.Input\ShapesProcessor.Input.csproj" />
+    <ProjectReference Include="..\ShapesProcessor.Logging\ShapesProcessor.Logging.csproj" />
   </ItemGroup>
 
   <ItemGroup>

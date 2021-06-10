@@ -8,9 +8,17 @@
 
         public int SideLengthInCentimetres { get; set; }
 
-        public int PerimeterInCentimetres { get { return NumberOfSides * SideLengthInCentimetres; } }
+        public int PerimeterInCentimetres { get; private set; }
 
         public PerimeterCategory PerimeterCategory { get { return GetPerimeterCategory(); } }
+
+        public Shape(int originalId, int numberOfSides, int sideLengthInCentimetres)
+        {
+            OriginalId = originalId;
+            NumberOfSides = numberOfSides;
+            SideLengthInCentimetres = sideLengthInCentimetres;
+            PerimeterInCentimetres = numberOfSides * sideLengthInCentimetres;
+        }
 
         private PerimeterCategory GetPerimeterCategory()
         {
@@ -24,11 +32,6 @@
             };
         }
 
-        public Shape(int originalId, int numberOfSides, int sideLengthInCentimetres)
-        {
-            OriginalId = originalId;
-            NumberOfSides = numberOfSides;
-            SideLengthInCentimetres = sideLengthInCentimetres;
-        }
+
     }
 }

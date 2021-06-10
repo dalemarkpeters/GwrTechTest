@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ShapeProcessor.Domain\ShapeProcessor.Domain.csproj" />
+    <ProjectReference Include="..\ShapesProcessor.Logging\ShapesProcessor.Logging.csproj" />
   </ItemGroup>
 
 </Project>

@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DFEE2D1D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapeProcessor.Output", "ShapeProcessor.Output\ShapeProcessor.Output.csproj", "{99DD8015-53FE-4DBA-B9E4-50002D4CB8EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShapesProcessor.Logging", "ShapesProcessor.Logging\ShapesProcessor.Logging.csproj", "{1CB5561A-6B2E-4D72-B047-5CEECD06A81D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{99DD8015-53FE-4DBA-B9E4-50002D4CB8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99DD8015-53FE-4DBA-B9E4-50002D4CB8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99DD8015-53FE-4DBA-B9E4-50002D4CB8EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CB5561A-6B2E-4D72-B047-5CEECD06A81D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CB5561A-6B2E-4D72-B047-5CEECD06A81D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CB5561A-6B2E-4D72-B047-5CEECD06A81D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CB5561A-6B2E-4D72-B047-5CEECD06A81D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
