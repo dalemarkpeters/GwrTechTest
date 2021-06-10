@@ -11,7 +11,7 @@ namespace ShapeProcessorTests
         [TestCase(1, 4, 4)]
         public void CanCalculatePerimeterOfAShapeGivenItsSideLengthAndNumberOfSides(int numSides, int sideLength, int expectedResult)
         {
-            var shape = new Shape(numSides, sideLength);
+            var shape = new Shape(1, numSides, sideLength);
 
             var result = shape.PerimeterInCentimetres;
 

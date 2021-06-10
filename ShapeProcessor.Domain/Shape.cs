@@ -2,6 +2,8 @@
 {
     public class Shape
     {
+        public int Id { get; set; }
+
         public int NumberOfSides { get; set; }
 
         public int SideLengthInCentimetres { get; set; }
@@ -22,8 +24,9 @@
             };
         }
 
-        public Shape(int numberOfSides, int sideLengthInCentimetres)
+        public Shape(int id, int numberOfSides, int sideLengthInCentimetres)
         {
+            Id = id;
             NumberOfSides = numberOfSides;
             SideLengthInCentimetres = sideLengthInCentimetres;
         }
